@@ -2396,16 +2396,16 @@ __attribute__((nomips16)) void board_init_r (gd_t *id, ulong dest_addr)
 			argv[2] = "0";
 			sprintf(addr_str, "0x%X", CFG_LOAD_ADDR);
 			argv[3] = &addr_str[0];
-			argv[4] = "lks7688.img";
+			argv[4] = "itronhab01.img";
 			setenv("autostart", "no");
 			if(do_fat_fsload(cmdtp, 0, argc, argv)){
-				printf("Could not find lks7688.img\n");
+				printf("Could not find itronhab01.img\n");
 			} else {
 				NetBootFileXferSize=simple_strtoul(getenv("filesize"), NULL, 16);
 				if (NetBootFileXferSize > 0xfb0000 + flash_base) {
-					printf("lks7688.img is too big\n");
+					printf("itronhab01.img is too big\n");
 				} else {
-					printf("writing lks7688.img to flash\n");
+					printf("writing itronhab01.img to flash\n");
 					raspi_erase_write((char *)CFG_LOAD_ADDR, CFG_KERN_ADDR-CFG_FLASH_BASE, NetBootFileXferSize);
 				}
 			}
@@ -2431,11 +2431,11 @@ __attribute__((nomips16)) void board_init_r (gd_t *id, ulong dest_addr)
 			argv[2] = "0";
 			sprintf(addr_str, "0x%X", CFG_LOAD_ADDR);
 			argv[3] = &addr_str[0];
-			argv[4] = "lks7688.cfg";
+			argv[4] = "itronhab01.cfg";
 			setenv("autostart", "no");
 			memset(CFG_LOAD_ADDR, 0, 64 * 1024 + 1);
 			if(do_fat_fsload(cmdtp, 0, argc, argv)){
-				printf("Could not find lks7688.cfg\n");
+				printf("Could not find itronhab01.cfg\n");
 			} else {
 				char *b = (char *)CFG_LOAD_ADDR;
 				char *s = b;
@@ -2513,16 +2513,16 @@ __attribute__((nomips16)) void board_init_r (gd_t *id, ulong dest_addr)
 			argv[2] = "0";
 			sprintf(addr_str, "0x%X", CFG_LOAD_ADDR);
 			argv[3] = &addr_str[0];
-			argv[4] = "lks7688.ldr";
+			argv[4] = "itronhab01.ldr";
 			setenv("autostart", "no");
 			if(do_fat_fsload(cmdtp, 0, argc, argv)){
-				printf("Could not find lks7688.ldr\n");
+				printf("Could not find itronhab01.ldr\n");
 			} else {
 				NetBootFileXferSize=simple_strtoul(getenv("filesize"), NULL, 16);
 				if (NetBootFileXferSize > 0x30000) {
-					printf("lks7688.ldr is too big\n");
+					printf("itronhab01.ldr is too big\n");
 				} else {
-					printf("writing lks7688.ldr to flash\n");
+					printf("writing itronhab01.ldr to flash\n");
 					raspi_erase_write((char *)CFG_LOAD_ADDR, 0, NetBootFileXferSize);
 				}
 			}

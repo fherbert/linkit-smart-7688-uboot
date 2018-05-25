@@ -202,7 +202,7 @@
 #define SHOW_VER_STR()	\
 	do {	\
 		printf("============================================ \n"); \
-		printf("Ralink UBoot Version: %s\n", RALINK_LOCAL_VERSION); \
+		printf("ItronHAB01 UBoot Version: %s\n", RALINK_LOCAL_VERSION); \
 		printf("-------------------------------------------- \n"); \
 		printf("%s %s %s\n",CHIP_TYPE, CHIP_VERSION, GMAC_MODE); \
 		printf("DRAM component: %d Mbits %s\n", DRAM_COMPONENT, DDR_INFO); \
